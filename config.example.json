@@ -1,0 +1,43 @@
+{
+  "server": {
+    "api_url": "http://<플랫폼 주소>:8322",
+    "api_user": "admin",
+    "api_password": "<ROBOLABEL_PASSWORD와 동일>",
+    "transport": "http",
+    "//": "transport=http면 아래 ssh_*/incoming_dir 불필요 (레거시 sftp 모드 전용)",
+    "ssh_host": "",
+    "ssh_user": "",
+    "ssh_password": "",
+    "incoming_dir": "/home/yoo/robolabel_data/raw"
+  },
+  "robot": {
+    "ssh_host": "10.42.1.101",
+    "ssh_user": "agi",
+    "ssh_password": "<로봇 SSH 비밀번호>",
+    "record_root": "/data/record"
+  },
+  "recording": {
+    "cameras": ["head_color", "hand_left_color", "hand_right_color"],
+    "post_win_ms": 600000,
+    "ref_cam": "head_color",
+    "pull_all_pbdat": true,
+    "push_pbdat": true,
+    "cleanup_robot": true,
+    "countdown_s": 3
+  },
+  "daemon": {
+    "port": 18800,
+    "idle_timeout_s": 900,
+    "stream_cams": ["head_color", "hand_left_color", "hand_right_color"],
+    "stream_fps": 4.0
+  },
+  "mode": "server",
+  "local": {
+    "data_dir": "~/ilbot_data",
+    "dataset": "",
+    "keep_raw": true
+  },
+  "staging_dir": "~/robolabel_staging",
+  "robot_type": "G2A",
+  "robot_aid": "G2A0004BC00489"
+}

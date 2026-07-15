@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.h5
+*.tar.gz
+*.pbdat
+episodes/
+.venv/
+handoff*.md
+config.json
+staging/
+dist/
+wheelhouse/

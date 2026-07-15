@@ -1,0 +1,25 @@
+[project]
+name = "ilbot-collector"
+version = "0.1.0"
+description = "IL-BOT Data Studio Collector: G2 로봇 데이터 수집 GUI (자립형)"
+requires-python = ">=3.10"
+dependencies = [
+    "PyQt6>=6.6",
+    "requests>=2.31",
+    "paramiko>=3.4",
+    "h5py>=3.10",
+    "numpy>=1.26",
+    # vendored proto 바인딩(vendor/)이 protobuf 5.28 계열로 생성됨 — 메이저 고정
+    "protobuf>=5.28,<6",
+    # 번들 컨버터(robolabel/)가 로봇→LeRobot 변환에 사용 — 로컬 저장 모드
+    "pyarrow>=15",
+    "imageio-ffmpeg>=0.5",
+    "zstandard>=0.22",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.uv]
+# 애플리케이션 레포 — 의존성만 관리 (번들 robolabel/는 sys.path로 로드)
+package = false
